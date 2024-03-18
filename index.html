@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa de Mensagens Interativa</title>
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Para evitar que o fundo animado role com a página */
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #fad3ed, #ef95f2); /* Gradiente de cores de exemplo */
+    z-index: -1; /* Coloca o fundo atrás do conteúdo da página */
+    animation: animateBackground 10s linear infinite; /* Animação com duração de 10 segundos e repetição infinita */
+}
+
+@keyframes animateBackground {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.message-box {
+    width: 300px;
+    height: 150px;
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.message {
+    font-size: 18px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.message-image {
+    width: 100px; /* Defina o tamanho da imagem conforme necessário */
+    height: 100px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+    </style>
+</head>
+
+<body>
+    <div class="background"></div>
+    
+    <div class="message-box" id="messageBox">
+        <div class="message" id="message1">Parabéns Cabeçona! Clica para o próximo cartão!</div>
+        <div class="message hidden" id="message2">Bom, essa não é uma carta à moda antiga</div>
+        <div class="message hidden" id="message3">Mas fiz este programa pra dizer-te algumas coisas</div>
+        <div class="message hidden" id="message4">Primeiramente...</div>
+        <div class="message hidden" id="message5">Você é muito cabeçona, claro kkkkk</div>
+        <div class="message hidden" id="message6">não come direito e por isso anda doente... sem contar tantas outras coisas que nem caberiam aqui</div>
+        <div class="message hidden" id="message7">"segundamente"</div>
+        <div class="message hidden" id="message8">mesmo sendo cabeçona, quero que saiba que você é uma pessoa muito importante pra mim...</div>
+        <div class="message hidden" id="message9">sua espontaneidade, sua visão de mundo, seu amor por animais, por crianças, por velhinhos... </div>
+        <div class="message hidden" id="message10">sua hiperatividade... sua baixa atividade kk... são algumas das coisinhas pelas quais tenho apreço em você </div>
+        <div class="message hidden" id="message11">isso não era pra ser uma mensagem gigante (só pra deixar claro)...</div>
+        <div class="message hidden" id="message12">mas quero que seja o suficiente para você saber o carinho, o respeito e a profunda admiração que eu tenho por você</div>
+        <div class="message hidden" id="message13">Enfim, desejo tudo de bom na sua vida, está se tornando uma grande mulher...</div>
+        <div class="message hidden" id="message14">Desejo que você realize todos os seus sonhos... desde andar de bicicleta até ir ao cinena sozinha kk</div>
+        <div class="message hidden" id="message15">Por fim...</div>
+        <div class="message hidden" id="message16">amo-te ❤️</div>
+        <div class="message hidden" id="message17">E antes que eu me esqueça...</div>
+        <div class="message hidden" id="message18"><p>Beba água</p><img class="message-image" src="https://i.pinimg.com/564x/30/11/fc/3011fca2f7698c3038d9246ceb78d29d.jpg" alt="Beba água"></div>
+    </div>
+
+    <script>
+const messages = [
+    document.getElementById("message1"),
+    document.getElementById("message2"),
+    document.getElementById("message3"),
+    document.getElementById("message4"),
+    document.getElementById("message5"),
+    document.getElementById("message6"),
+    document.getElementById("message7"),
+    document.getElementById("message8"),
+    document.getElementById("message9"),
+    document.getElementById("message10"),
+    document.getElementById("message11"),
+    document.getElementById("message12"),
+    document.getElementById("message13"),
+    document.getElementById("message14"),
+    document.getElementById("message15"),
+    document.getElementById("message16"),
+    document.getElementById("message17"),
+    document.getElementById("message18")
+];
+
+let currentMessage = 0;
+
+const messageBox = document.getElementById("messageBox");
+
+messageBox.addEventListener("click", () => {
+    messages[currentMessage].classList.add("hidden");
+    currentMessage = (currentMessage + 1) % messages.length;
+    messages[currentMessage].classList.remove("hidden");
+});
+
+
+
+    </script>
+</body>
+
+</html>
