@@ -1,1 +1,1 @@
-﻿# caixinha de mensagem para a minha namorada :heart:
+﻿# caixinha de mensagem para a minha amada :heart:
